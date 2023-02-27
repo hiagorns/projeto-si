@@ -39,6 +39,8 @@ class MAP{
       }
     }
     this.array[i][j][1] = "player";
+
+    return [i,j];
   }
   
   setFood(){
@@ -55,6 +57,8 @@ class MAP{
       }
     }
     this.array[i][j][1] = "food";
+
+    return [i,j];
   }
   
   node(){
@@ -113,7 +117,7 @@ class MAP{
         
       }
     }
-    print(this.matrix);
+    // print(this.matrix);
   }
   
   
@@ -155,6 +159,12 @@ class MAP{
         }
 
       }
+    }
+  }
+
+  visited(x, y){
+    if(this.array[x][y][1] != "player"){
+      this.array[x][y][1] = "visited";
     }
   }
 }
